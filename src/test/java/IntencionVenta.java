@@ -3,7 +3,7 @@ import java.util.List;
 
 public class IntencionVenta {
     private List<Item> items;
-    private float precioVenta;
+    private double precioVenta;
 
     public IntencionVenta(Item item, float precioVenta) {
         this.items = new ArrayList<Item>();
@@ -19,7 +19,14 @@ public class IntencionVenta {
         this.precioVenta = precioVenta;
     }
 
-    public double renta() {
+    public IntencionVenta(Faso faso1, Faso faso2, double precioVenta) {
+        this.items = new ArrayList<Item>();
+        this.items.add(faso1);
+        this.items.add(faso2);
+        this.precioVenta = precioVenta;
+	}
+
+	public double renta() {
         return Math.max(0,this.precioVenta - this.costoAcumulado());
     }
 

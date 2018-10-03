@@ -73,4 +73,22 @@ public class ChinoTest {
 
         assertEquals(119.992, actual, 0.001);
     }
+    
+    @Test
+    public void testCompro2FasoYPaga150SiendoQueAlChinoLeCosto20CadaUno() {
+    	Faso f1 = new Faso(20);
+    	Faso f2 = new Faso(20);
+    	
+    	IntencionVenta venta = new IntencionVenta(
+    			f1,
+    			f2,
+    			150
+    	);
+    	
+    	double actual = venta.renta();
+    	
+    	assertEquals(110, actual, 0.001);
+    	
+    	
+    }
 }
